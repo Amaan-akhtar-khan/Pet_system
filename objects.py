@@ -38,3 +38,48 @@ class Pet:
 
     def status(self):
         print(f'\nName:{self.name}\nType of animal:{self.animal_type}\nEnergy:{self.energy}\nHunger level:{self.hunger}\nHappiness level :{self.happiness}\n')
+
+class Dog(Pet):# make the dog work , work on the gamplay loop and iteration thing - when these are stable only then any new feature 
+    def __init__(self , name):
+      super().__init__(name, 'Dog', 70 ,  70 , 0 , True )    
+        
+    def fetch(self):
+        pass 
+    def run(self):
+        pass
+    def guard(self):
+        pass
+    def bath(self):
+        pass 
+    def vet_visit(self):
+        pass
+
+class Cat(Pet):
+    def __int__(self):
+        pass
+    def nap(self):
+        pass
+    def scratch(self):
+        pass
+    def ignore(self):
+        pass 
+
+class Hamster(Pet):
+    def __init__(self):
+        pass
+    def run_wheel(self):
+        pass 
+    def hide(self):
+        pass 
+    def collect_food(self):
+        pass 
+
+class Parrot(Pet):
+    def __int__(self):
+        pass
+    def mimic(self):
+        pass 
+    def scream(self):
+        pass
+    def fly(self):
+        pass 
