@@ -1,3 +1,4 @@
+import random
 from helpers import clamp
 
 class Pet:
@@ -9,14 +10,20 @@ class Pet:
         self.happiness = happiness
         self.alive = alive
 
-    def eat(self): # hunger + 30 , energy + 20
-        self.update_stats(20 , 30)
+    def eat(self): # hunger + 15 - 30 , energy + 10 - 20
+        self.update_stats(random.randint(10,20) 
+                          , random.randint(15 , 30)
+                          )
 
-    def play(self): # energy - 40 , hunger = -30 
-        self.update_stats(-40 , -30)
+    def play(self): # energy - 40 - -10 , hunger = -15 - -30 
+        self.update_stats(random.randint(-40 , -10) , 
+                          random.randint(-15 , -30)
+                          )
 
-    def sleep(self): # energy +30 , hunger - 10
-        self.update_stats(30 , -10)
+    def sleep(self): # energy +20 - +30 , hunger - 10 - -30
+        self.update_stats(random.randint(20 , 30) ,
+                           random.randint(-10 , -30)
+                           )
     
     def update_stats(self , a , b , c ):#a is for energy and b is for hunger and c is for happiness 
         self.energy = clamp(self.energy + a , 100)
