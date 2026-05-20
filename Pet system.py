@@ -10,7 +10,7 @@ def main ():
     name = input('Enter the name of your Pet:')
     animal_type = helpers.text_inp('Enter the type of animal:' , 'Parrot' , 'Dog' , 'Cat' , 'Hamster' )
     
-    pet = Pet(name , animal_type , 70 , 70 ,True)
+    pet = Pet(name , animal_type , 70 , 70 , 0 ,True)
     while pet.alive:
         print(string)
         num = helpers.get_ope('Your choice:' , 1 , 4)
@@ -21,6 +21,10 @@ def main ():
             pet.play()
         elif num == 3:
             pet.sleep()
-    print('Your pet died...')
+        if pet.happiness == 1000:
+            print('You finished the game!!!!')
+            break
+    if pet.alive is False:
+        print('Your pet died...')
         
 main()

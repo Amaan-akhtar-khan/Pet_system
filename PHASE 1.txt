@@ -1,0 +1,31 @@
+PHASE 1
+
+Add:
+✅ points display
+
+ONLY.
+
+PHASE 2
+
+Add:
+✅ pet preferences
+✅ unique actions
+
+PHASE 3
+
+Add:
+✅ random stat changes
+
+using:
+
+import random
+PHASE 4
+
+Add:
+✅ iteration system
+✅ hated maintenance action
+
+PHASE 5
+
+Add:
+✅ history/save system

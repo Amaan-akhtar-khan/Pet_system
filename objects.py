@@ -1,11 +1,12 @@
 from helpers import clamp
 
 class Pet:
-    def __init__(self, name, animal_type, energy, hunger, alive):
+    def __init__(self, name, animal_type, energy, hunger, happiness , alive):
         self.name = name 
         self.animal_type = animal_type
         self.energy = energy
         self.hunger = hunger
+        self.happiness = happiness
         self.alive = alive
 
     def eat(self): # hunger + 30 , energy + 20
@@ -17,9 +18,10 @@ class Pet:
     def sleep(self): # energy +30 , hunger - 10
         self.update_stats(30 , -10)
     
-    def update_stats(self , a , b ):#a is for energy and b is for hunger
-        self.energy = clamp(self.energy + a)
-        self.hunger = clamp(self.hunger + b)
+    def update_stats(self , a , b , c ):#a is for energy and b is for hunger and c is for happiness 
+        self.energy = clamp(self.energy + a , 100)
+        self.hunger = clamp(self.hunger + b , 100)
+        self.happiness = clamp(self.happiness + c , 1000)
         self.check_status()
         self.status()
 
@@ -28,4 +30,4 @@ class Pet:
             self.alive = False
 
     def status(self):
-        print(f'\nName:{self.name}\nType of animal:{self.animal_type}\nEnergy:{self.energy}\nHunger level:{self.hunger}\nAlive:{self.alive}\n')
+        print(f'\nName:{self.name}\nType of animal:{self.animal_type}\nEnergy:{self.energy}\nHunger level:{self.hunger}\nHappiness level :{self.happiness}\n')

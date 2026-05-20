@@ -9,11 +9,11 @@ def text_inp(y,a,b,c,d):
         except :
             print('Enter a valid operation.')
 
-def clamp(x):#Is used in Objects...Not in the main file.
+def clamp(x , y):#Is used in Objects...Not in the main file.
     if x < 0 :
         return 0
-    elif x > 100:
-        return 100
+    elif x > y:
+        return y
     else :
         return x 
 
