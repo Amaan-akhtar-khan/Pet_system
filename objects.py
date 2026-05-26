@@ -1,4 +1,4 @@
-import random
+import random as r 
 from helpers import clamp
 
 class Pet:
@@ -11,18 +11,18 @@ class Pet:
         self.alive = alive
 
     def eat(self): # hunger + 15 - 30 , energy + 10 - 20
-        self.update_stats(random.randint(10,20) 
-                          , random.randint(15 , 30)
+        self.update_stats(r.randint(10,20) 
+                          , r.randint(15 , 30)
                           )
 
     def play(self): # energy - 40 - -10 , hunger = -15 - -30 
-        self.update_stats(random.randint(-40 , -10) , 
-                          random.randint(-15 , -30)
+        self.update_stats(r.randint(-40 , -10) , 
+                          r.randint(-15 , -30)
                           )
 
     def sleep(self): # energy +20 - +30 , hunger - 10 - -30
-        self.update_stats(random.randint(20 , 30) ,
-                           random.randint(-10 , -30)
+        self.update_stats(r.randint(20 , 30) ,
+                           r.randint(-10 , -30)
                            )
     
     def update_stats(self , a , b , c ):#a is for energy and b is for hunger and c is for happiness 
@@ -44,15 +44,15 @@ class Dog(Pet):# make the dog work , work on the gamplay loop and iteration thin
       super().__init__(name, 'Dog', 70 ,  70 , 0 , True )    
         
     def fetch(self):
-        pass 
+        self.update_stats(r.randint(-45 , -30) , r.randint( -50 , -20) , r.randint(20 , 50))
     def run(self):
-        pass
+        self.update_stats(r.randint(-40 , - 25) , r.randint(- 10 , -20) , r.randint(40 , 70 ))
     def guard(self):
-        pass
+        self.update_stats(r.randint(-20 , -10) , r.randint(-10 , -5 ) , r.randint(20 , 40 ))
     def bath(self):
-        pass 
+        self.update_stats(r.randint(-20 , -10) , r.randint(-10 , - 5) , r.randint(-80 , -40))
     def vet_visit(self):
-        pass
+        self.update_stats(r.randint(-30 , -15) , r.randint(-20 , -10) , r.randint( -150 , - 100))
 
 class Cat(Pet):
     def __int__(self):
