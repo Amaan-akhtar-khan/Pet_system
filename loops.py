@@ -6,8 +6,9 @@ string_universal = '''1. Eat
 3. Sleep
 '''
 
-def dog_loop(dog):
-    print(string_universal + '4. Fetch\n5. Run\n6. Guard\n7. Bath\n8. Vet Visit')
+def dog_loop(dog):#need to make the auto bath working 
+
+    print(string_universal)
     choice = get_ope('Enter Your chocice:', 1, 9)
     if choice == 1:
         dog.eat()
@@ -33,5 +34,14 @@ def dog_loop(dog):
     else :
         dog.vet_visit()
         print('Dog had to visit the vet')
+
+    if dog.bath_turn == 10:
+        dog.bath()
+        dog.bath_turn = -1
+        print('Dog took a bath!')
+    else :
+        print(f'{10 - dog.bath_turn} turns till the dog auto baths')
+
+    dog.bath_turn += 1
 
 

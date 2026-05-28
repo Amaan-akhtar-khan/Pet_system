@@ -1,5 +1,5 @@
 import helpers 
-from objects import Pet # type: ignore
+from objects import * 
 from loops import *
 
 def win():
@@ -20,7 +20,8 @@ def loop(x , pet):
 def main ():
     name = input('Enter the name of your Pet:')
     animal_type = helpers.text_inp('Enter the type of animal[Parrot , Dog , Cat , Hamster]' , 'Parrot' , 'Dog' , 'Cat' , 'Hamster' )
-    
+    declare_values()
+
     if animal_type == 'Dog':
         pet = Dog(name)
         loop(dog_loop , pet)     
